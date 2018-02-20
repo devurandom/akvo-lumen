@@ -10,7 +10,7 @@ echo "Waiting for Keycloak ..."
 
 while [[ -z "${KEYCLOAK}" && "${ATTEMPTS}" -lt "${MAX_ATTEMPTS}" ]]; do
     sleep 1
-    KEYCLOAK=$((curl -v "http://auth.lumen.local:8080/auth/realms/akvo/.well-known/openid-configuration" 2>&1 | grep "HTTP/1.1 200 OK") || echo "")
+    KEYCLOAK=$((curl -v "http://auth.lumen.localhost:8080/auth/realms/akvo/.well-known/openid-configuration" 2>&1 | grep "HTTP/1.1 200 OK") || echo "")
     let ATTEMPTS+=1
 done
 

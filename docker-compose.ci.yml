@@ -9,7 +9,7 @@ services:
      - LUMEN_DB_URL=jdbc:postgresql://postgres/lumen?user=lumen&password=password&ssl=true
      - CI_BUILD=yes
      - LUMEN_FILE_UPLOAD_PATH=/tmp/akvo/lumen
-     - LUMEN_KEYCLOAK_URL=http://auth.lumen.local:8080/auth
+     - LUMEN_KEYCLOAK_URL=http://auth.lumen.localhost:8080/auth
      - LUMEN_KEYCLOAK_CLIENT_SECRET=caed3964-09dd-4752-b0bb-22c8e8ffd631
      - LUMEN_ENCRYPTION_KEY=secret
      - LUMEN_SENTRY_BACKEND_DSN=anything
@@ -37,5 +37,5 @@ services:
      - HOST_UID
      - HOST_GID
    links:
-      - keycloak:auth.lumen.local
+      - keycloak:auth.lumen.localhost
    command: "true"
